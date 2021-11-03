@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -29,6 +30,7 @@ namespace NordicStationCodeTestPart3.Models
         [Display(Name = "Expiration year")]
         public short ExpYear { get; set; }
 
+        [Column(TypeName = "Datetime")]
         [Required(ErrorMessage = "The modified date is required")]
         [Display(Name = "Date modified")]
         public DateTime ModifiedDate { get; set; }

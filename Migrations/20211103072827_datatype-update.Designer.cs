@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NordicStationCodeTestPart3.DataAccess;
 
 namespace NordicStationCodeTestPart3.Migrations
 {
     [DbContext(typeof(CreditCardDbContext))]
-    partial class CreditCardDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211103072827_datatype-update")]
+    partial class datatypeupdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
