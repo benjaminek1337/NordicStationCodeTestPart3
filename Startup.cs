@@ -6,6 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NordicStationCodeTestPart3.DataAccess;
+using NordicStationCodeTestPart3.Models;
+using NordicStationCodeTestPart3.Repositories;
+using NordicStationCodeTestPart3.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +34,8 @@ namespace NordicStationCodeTestPart3
                 )
             );
 
-            // services.AddTransient<>
+            services.AddTransient<ICreditCardDbRepository<CreditCard>, CreditCardDbRepository<CreditCard>>();
+            services.AddTransient<ICreditCardService, CreditCardService>();
 
             services.AddControllersWithViews();
         }
